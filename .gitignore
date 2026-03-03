@@ -25,12 +25,27 @@ result
 !.claude/skills/writing-clearly-and-concisely/
 !.claude/skills/writing-plans/
 !.claude/skills/writing-skills/
+!.claude/skills/solve-math/
+!.claude/skills/benchmark-math/
 
 # Local envrc overrides (per-machine)
 .envrc.local.d/
 
-# Working documents (plans live in PR body, not repo)
-docs/plans/
+# Working documents (implementation plans are kept for reference)
+# docs/plans/
 
-# Project memory (created by Claude Code on first run)
-MEMORY.md
+# Project memory (tracked for this project)
+# MEMORY.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Benchmark results (generated, not committed)
+results/
+!results/.gitkeep

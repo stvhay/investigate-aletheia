@@ -18,7 +18,10 @@
         {
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
-              # Add project dependencies here
+              python3
+              uv
+              ruff
+              mypy
             ];
             shellHook = ''
               true
