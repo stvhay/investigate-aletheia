@@ -63,7 +63,7 @@ Report progress to the user after each problem:
 
 ### Step 4: Grade each result
 
-For each problem that produced a proof (not "NO SOLUTION FOUND"), spawn a **general-purpose** sub-agent using the Task tool with model `sonnet`:
+For each problem that produced a proof (not "NO SOLUTION FOUND"), spawn a **general-purpose** sub-agent using the Task tool with model `opus`:
 - Use the Grader prompt from `.claude/skills/benchmark-math/prompts/grader.md`
 - Replace `{PROBLEM}` with the problem text
 - Replace `{SOLUTION}` with the reference solution from the CSV
@@ -88,7 +88,7 @@ The report format:
 # Benchmark Results: Tier N
 
 **Date:** YYYY-MM-DD
-**Model:** sonnet
+**Model:** opus
 **Parameters:** max_attempts=3, max_revisions=2
 
 ## Summary

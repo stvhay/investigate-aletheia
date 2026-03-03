@@ -13,7 +13,7 @@ Solve a mathematical proof problem using an iterative Generate→Verify→Revise
 
 - **max_attempts**: 3 (full Generator restarts on `[WRONG]`)
 - **max_revisions**: 2 (Revise→Verify cycles per attempt before escalating to `[WRONG]`)
-- **model**: sonnet (override with opus for harder problems)
+- **model**: opus
 
 ## Input
 
@@ -40,7 +40,7 @@ Set `attempt = 1`.
 
 #### 2a. Generate
 
-Spawn a **general-purpose** sub-agent using the Task tool with model `sonnet`:
+Spawn a **general-purpose** sub-agent using the Task tool with model `opus`:
 - Use the Generator prompt from `generator.md`
 - Replace `{PROBLEM}` with the user's problem statement
 - The sub-agent's task description should be: "Generate mathematical proof"
@@ -54,7 +54,7 @@ Set `revision = 0`.
 
 **Inner loop** (up to `max_revisions + 1` verification passes — the first verification is for the Generator's output, subsequent ones are for revised proofs):
 
-Spawn a **general-purpose** sub-agent using the Task tool with model `sonnet`:
+Spawn a **general-purpose** sub-agent using the Task tool with model `opus`:
 - Use the Verifier prompt from `verifier.md`
 - Replace `{PROBLEM}` with the user's problem statement
 - Replace `{PROOF}` with the current `candidate_proof`
@@ -71,7 +71,7 @@ Parse the verdict from the Verifier's response. Look for exactly one of: `[CORRE
 
 #### 2c. Revise
 
-Spawn a **general-purpose** sub-agent using the Task tool with model `sonnet`:
+Spawn a **general-purpose** sub-agent using the Task tool with model `opus`:
 - Use the Reviser prompt from `reviser.md`
 - Replace `{PROBLEM}` with the user's problem statement
 - Replace `{PROOF}` with the current `candidate_proof`
